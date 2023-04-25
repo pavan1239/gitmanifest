@@ -12,11 +12,11 @@ node {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
-                        sh "git config user.email rakhi.parashar@accenture.com"
-                        sh "git config user.name rakhar"
+                        sh "git config user.email pavanpachuru1@gmail.com"
+                        sh "git config user.name pavan1239"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
-                        sh "sed -i 's+rakhi12345/test.*+rakhi12345/test:${DOCKERTAG}+g' deployment.yaml"
+                        sh "sed -i 's+799360/test.*+799360/test:${DOCKERTAG}+g' deployment.yaml"
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
